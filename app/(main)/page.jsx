@@ -6,6 +6,7 @@ import Hero from "@/components/home/Hero";
 import HowItWorks from "@/components/home/HowItWorks";
 import Services from "@/components/home/Services";
 import TrustBar from "@/components/home/TrustBar";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 import React from "react";
 
 const page = () => {
@@ -19,6 +20,7 @@ const page = () => {
       <Consultation />
       <CourseFinderBanner />
       <HowItWorks />
+      <WhyChooseUs />
     </div>
   );
 };

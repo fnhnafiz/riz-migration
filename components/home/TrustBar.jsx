@@ -59,16 +59,21 @@ export default function TrustBar() {
 
         <div className="mt-12 grid gap-10 sm:grid-cols-3 lg:mt-16 lg:gap-8">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-[38px] font-bold leading-none tabular-nums text-primary lg:text-[44px]">
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-primary bg-primary px-6 py-10 text-center"
+            >
+              <p className="text-[38px] font-bold leading-none tabular-nums text-white lg:text-[44px]">
                 <Counter
                   target={stat.value}
                   suffix={stat.suffix}
                   started={started}
                 />
               </p>
-              <h3 className="mt-4 text-[16px] font-semibold">{stat.label}</h3>
-              <p className="mx-auto mt-3 max-w-[300px] text-[14px] leading-relaxed">
+              <h3 className="mt-4 text-[16px] font-semibold text-white">
+                {stat.label}
+              </h3>
+              <p className="mx-auto mt-3 max-w-[300px] text-[14px] leading-relaxed text-white/85">
                 {stat.desc}
               </p>
             </div>

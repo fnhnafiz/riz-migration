@@ -92,9 +92,9 @@ export default function Destinations() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-          {/* ---------- featured slider ---------- */}
-          <div className="sm:col-span-2 lg:row-span-2">
+        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          {/* ---------- featured slider — always first, full width ---------- */}
+          <div className="order-first col-span-2 sm:col-span-2 lg:row-span-2">
             <Swiper
               modules={[Autoplay]}
               slidesPerView={1}
@@ -115,22 +115,22 @@ export default function Destinations() {
             </Swiper>
           </div>
 
-          {/* ---------- country grid ---------- */}
+          {/* ---------- country grid — 2 cols on mobile ---------- */}
           {countries.map((country) => (
             <Link
               key={country.name}
               href={country.href}
-              className="group flex flex-col justify-between rounded-3xl border border-border p-6 transition-colors hover:border-primary hover:bg-primary-light"
+              className="group order-last flex flex-col justify-between rounded-2xl border border-border p-4 transition-colors hover:border-primary hover:bg-primary-light sm:order-none sm:rounded-3xl sm:p-6"
             >
-              <span className="text-4xl">{country.flag}</span>
+              <span className="text-3xl sm:text-4xl">{country.flag}</span>
 
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold">{country.name}</h3>
-                <p className="mt-1 text-sm">{country.note}</p>
+              <div className="mt-4 sm:mt-8">
+                <h3 className="text-sm font-semibold sm:text-lg">{country.name}</h3>
+                <p className="mt-1 text-xs sm:text-sm">{country.note}</p>
 
-                <p className="mt-4 flex items-center gap-1.5 text-sm font-medium text-primary-dark">
-                  <GraduationCap size={15} />
-                  {country.universities} universities
+                <p className="mt-3 flex items-center gap-1 text-xs font-medium text-primary-dark sm:mt-4 sm:gap-1.5 sm:text-sm">
+                  <GraduationCap size={13} />
+                  {country.universities} unis
                 </p>
               </div>
             </Link>

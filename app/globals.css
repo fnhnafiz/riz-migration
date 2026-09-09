@@ -164,6 +164,7 @@
   .animate-menu {
     animation: menu-in 160ms ease-out;
   }
+
 }
 
 @keyframes menu-in {
