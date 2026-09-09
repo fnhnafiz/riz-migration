@@ -166,8 +166,8 @@ export default function Navbar() {
               href="/counseling"
               className={`${BTN} ${
                 scrolled
-                  ? "bg-white text-[#0f9488] shadow-sm hover:bg-[#f0fdfa]"
-                  : "bg-[#14b8a6] text-white hover:bg-[#0f9488]"
+                  ? "bg-white text-black shadow-sm hover:bg-[#f0fdfa]"
+                  : "bg-primary text-white hover:bg-[#0f9488]"
               }`}
             >
               Book counseling
@@ -385,7 +385,7 @@ export default function Navbar() {
           </a>
           <Link
             href="/counseling"
-            className={`${BTN} flex-1 bg-[#14b8a6] text-white hover:bg-[#0f9488]`}
+            className={`${BTN} flex-1 bg-primary text-white hover:bg-[#0f9488]`}
           >
             Book counseling
           </Link>

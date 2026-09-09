@@ -3,7 +3,7 @@ import { ArrowUpRight, ShieldCheck, FileText, Search } from "lucide-react";
 
 export default function AiTools() {
   return (
-    <section className="relative overflow-hidden bg-dark py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-black py-20 lg:py-28">
       {/* হালকা ডট টেক্সচার, কালোটা যেন ফাঁকা না লাগে */}
       <div
         aria-hidden="true"
@@ -28,7 +28,7 @@ export default function AiTools() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 lg:mt-16 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 lg:mt-16 lg:grid-cols-3">
           <ToolCard
             icon={ShieldCheck}
             title="Visa Possibility Checker"
@@ -65,29 +65,27 @@ function ToolCard({ icon: Icon, title, desc, cta, href, preview }) {
   return (
     <Link
       href={href}
-      className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-colors hover:border-primary/60"
+      className="group flex flex-col overflow-hidden rounded-3xl bg-white transition-transform duration-300 hover:-translate-y-1"
     >
       {/* টুলটা আসলে কী দেখাবে, তার ছোট নমুনা */}
-      <div className="border-b border-white/10 bg-white/[0.03] px-7 pb-7 pt-8">
+      <div className="border-b border-border bg-primary-light px-7 pb-7 pt-8">
         {preview}
       </div>
 
       <div className="flex flex-1 flex-col p-7">
         <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
             <Icon size={19} />
           </span>
-          <span className="rounded-full border border-primary/40 px-2.5 py-1 text-xs font-semibold text-primary">
+          <span className="rounded-full bg-primary-light px-2.5 py-1 text-xs font-semibold text-primary-dark">
             Free
           </span>
         </div>
 
-        <h3 className="mt-5 text-xl font-semibold text-white">{title}</h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-white/60">
-          {desc}
-        </p>
+        <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+        <p className="mt-3 flex-1 text-sm leading-relaxed">{desc}</p>
 
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+        <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary-dark">
           {cta}
           <ArrowUpRight
             size={16}
@@ -114,7 +112,7 @@ function ScorePreview() {
           cy="60"
           r={radius}
           fill="none"
-          stroke="rgba(255,255,255,0.12)"
+          stroke="#ffffff"
           strokeWidth="9"
         />
         <circle
@@ -132,7 +130,7 @@ function ScorePreview() {
           y="60"
           textAnchor="middle"
           dominantBaseline="central"
-          fill="#fff"
+          fill="var(--color-dark)"
           fontSize="26"
           fontWeight="700"
           transform="rotate(90 60 60)"
@@ -148,8 +146,10 @@ function ScorePreview() {
           { label: "English", width: "61%" },
         ].map((factor) => (
           <div key={factor.label}>
-            <p className="mb-1.5 text-xs text-white/50">{factor.label}</p>
-            <div className="h-1.5 rounded-full bg-white/10">
+            <p className="mb-1.5 text-xs font-medium text-primary-dark">
+              {factor.label}
+            </p>
+            <div className="h-1.5 rounded-full bg-white">
               <div
                 className="h-full rounded-full bg-primary"
                 style={{ width: factor.width }}
@@ -165,16 +165,16 @@ function ScorePreview() {
 function SopPreview() {
   return (
     <div className="space-y-3">
-      <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3.5">
-        <p className="mb-2 text-xs text-white/40">Your line</p>
-        <p className="text-sm leading-relaxed text-white/45 line-through decoration-red-400/70">
+      <div className="rounded-xl border border-border bg-white p-3.5">
+        <p className="mb-2 text-xs">Your line</p>
+        <p className="text-sm leading-relaxed text-body/70 line-through decoration-red-400">
           Since childhood I have always had a passion for computers.
         </p>
       </div>
 
-      <div className="rounded-xl border border-primary/30 bg-primary/10 p-3.5">
-        <p className="mb-2 text-xs text-primary">Rewritten</p>
-        <p className="text-sm leading-relaxed text-white/85">
+      <div className="rounded-xl border border-primary/40 bg-primary p-3.5">
+        <p className="mb-2 text-xs font-medium text-white/75">Rewritten</p>
+        <p className="text-sm leading-relaxed text-white">
           I spent my final year building a Bangla OCR model that cut manual data
           entry at my college by half.
         </p>
@@ -190,7 +190,7 @@ function CoursePreview() {
         {["Canada", "Master's", "IELTS 6.5", "Under $20k"].map((chip) => (
           <span
             key={chip}
-            className="rounded-lg border border-white/10 bg-white/[0.06] px-2.5 py-1 text-xs text-white/70"
+            className="rounded-lg bg-white px-2.5 py-1 text-xs font-medium text-primary-dark"
           >
             {chip}
           </span>
@@ -203,15 +203,15 @@ function CoursePreview() {
       ].map((course) => (
         <div
           key={course.name}
-          className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-3"
+          className="flex items-center justify-between gap-3 rounded-xl border border-border bg-white px-3.5 py-3"
         >
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-white">
+            <p className="truncate text-sm font-medium text-dark">
               {course.name}
             </p>
-            <p className="truncate text-xs text-white/45">{course.uni}</p>
+            <p className="truncate text-xs">{course.uni}</p>
           </div>
-          <span className="shrink-0 text-sm font-semibold text-primary">
+          <span className="shrink-0 text-sm font-semibold text-primary-dark">
             {course.match}%
           </span>
         </div>

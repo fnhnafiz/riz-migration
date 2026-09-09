@@ -146,40 +146,62 @@ export default function Destinations() {
     </section>
   );
 }
-
 function FeaturedCard({ flag, name, href, blurb, universities, stats }) {
   return (
     <Link
       href={href}
-      className="group relative flex h-full min-h-[440px] flex-col justify-between overflow-hidden rounded-3xl bg-dark p-8 text-white/70 lg:p-10"
+      className="group relative flex h-full min-h-[440px] flex-col justify-between overflow-hidden rounded-3xl bg-primary p-8 text-white/80 lg:p-10"
     >
-      {/* কোণায় বড় পতাকা, ওয়াটারমার্কের মতো */}
+      {/* কোণায় নরম আলো */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -right-10 -top-10 text-[190px] leading-none opacity-10 blur-[1px]"
+        className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/20 blur-3xl"
+      />
+
+      {/* ওয়াটারমার্ক পতাকা */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-12 -right-8 text-[200px] leading-none opacity-15 blur-[1px]"
       >
         {flag}
       </span>
 
       <div className="relative">
-        <span className="text-5xl">{flag}</span>
-        <h3 className="mt-6 text-3xl font-bold text-white lg:text-4xl">
+        <div className="flex items-start justify-between gap-4">
+          <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-3xl shadow-[0_10px_24px_-12px_rgba(0,0,0,0.5)]">
+            {flag}
+          </span>
+
+          <span className="rounded-full border border-white/35 px-3 py-1.5 text-xs font-semibold text-white">
+            Top choice
+          </span>
+        </div>
+
+        <h3 className="mt-7 text-3xl font-bold text-white lg:text-4xl">
           {name}
         </h3>
         <p className="mt-4 max-w-md leading-relaxed">{blurb}</p>
       </div>
 
       <div className="relative mt-10">
-        <dl className="grid grid-cols-3 gap-4 border-t border-white/15 pt-6">
+        {/* স্ট্যাটগুলো এখন আলাদা কাঁচের ঘরে */}
+        <dl className="grid grid-cols-3 gap-2.5">
           {stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="text-xs">{stat.label}</dt>
-              <dd className="mt-1 font-semibold text-white">{stat.value}</dd>
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-white/20 bg-white/10 p-3.5 backdrop-blur-sm"
+            >
+              <dt className="text-[11px] leading-tight text-white/70">
+                {stat.label}
+              </dt>
+              <dd className="mt-1.5 text-sm font-semibold text-white">
+                {stat.value}
+              </dd>
             </div>
           ))}
         </dl>
 
-        <span className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-primary">
+        <span className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-primary-dark">
           Explore {universities} universities
           <ArrowUpRight
             size={16}

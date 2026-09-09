@@ -11,7 +11,7 @@ export default function CourseFinderBanner() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="relative overflow-hidden rounded-[32px] bg-primary px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+        <div className="relative overflow-hidden rounded-[32px] bg-black px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_320px] lg:gap-8">
             {/* ---------------- left ---------------- */}
             <div>
